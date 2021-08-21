@@ -5,10 +5,9 @@
     <title>Sign in</title>
     <link rel="shortcut icon" href=/assets/favicon.ico">
     
-    <!-- <link rel="stylesheet" href="./main.css"> -->
     
 </head>
-<body>
+<body text="white">
     <div class="container">
         <form class="form" id="login">
             <h1 class="form__title">Sign in</h1>
@@ -21,17 +20,13 @@
                 <input type="password" class="form__input" autofocus placeholder="Password">
                 <div class="form__input-error-message"></div>
             </div>
-            <br>
-            <!-- <button class="form__button" type="submit">--><a href="index.html" class="form__button" type="submit">Continue<!--</button>--></a>
-            <br>
-            <br>
-            <input type="checkbox" id="checkbox" name="checkbox"><label class="checkbox-text">Remember login</label>
-            <br>
+
+            <!-- <button class="form__button" type="submit">--><a href="index.html" class="form__button" type="submit">Sign in<!--</button>--></a>
             <p class="form__text">
                 <a href="#" class="form__link">Forgot your password?</a>
             </p>
             <p class="form__text">
-                <a class="form__link" href="regist.html" id="linkCreateAccount">Don't have an account? Sign up </a>
+                <a class="form__link" href="regist.html" id="linkCreateAccount">Don't have an account? Create account </a>
             </p>
         </form>
     </div>
@@ -64,7 +59,13 @@ body {
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0,0,0,0.2);
     boder_radius: var(--border-radius);
-    background: #ffffff;
+    background: black;
+
+    padding-left: 5!important;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
 }
 
 .container,
@@ -130,17 +131,23 @@ body {
 }
 
 .form__button {
-    width: 100%;
-    padding:  1rem 6rem;
+    width: 100;
+    padding:  1rem 7rem;
     font-weight: bold;
     font-size: 1.1rem;
     color: #ffffff;
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: 0;
     outline: none;
     cursor: pointer;
     background: var(--color-primary);
     text-decoration: none;
+
+    padding-left: 5!important;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
 }
 
 .form__button:hover {
