@@ -10,10 +10,10 @@
     <!-- <link rel="stylesheet" href="./main.css"> -->
     
 </head>
-<body>
+<body text="white">
     <div class="container">
-        <form class="form" id="regist">
-            <h1 class="form__title">Sign up</h1>
+        <form class="form" id="login">
+            <h1 class="form__title" >Sign Up</h1>
             <div class="form__message form__message--error"></div>
             <div class="form__input-group">
                 <input type="text" class="form__input" autofocus placeholder="Username">
@@ -33,20 +33,18 @@
             </div>
          <fieldset>
         <legend>Giới tính:</legend>
-        <input type="checkbox" id="nam" name="nam"><label for="nam">Nam</label>
+        <input type="checkbox" id="boy" name="boy"><label for="boy">Nam</label>
         <input type="checkbox" id="nu" name="nu"><label for="nu">Nữ</label> 
-        <input type="checkbox" id="khac" name="khac"><label for="khac">Khác</label> 
+        <input type="checkbox" id="3d" name="3d"><label for="3d">Khác</label> 
         </fieldset> 
         <br>
-        <br>
-            <a href="index.html" class="form__button" type="submit">Continue</a>
-        <br><br>
+            <a href="index.html" class="form__button" type="submit">Sign up</a>
             <p class="form__text">
                 <a class="form__link" href="login.html" id="linkLogin">Already have an account? Sign in </a>
             </p>
         </form>
     </div>
-    <script src="./src/main.js"></script>
+    
 </body>
 <style>
     body {
@@ -75,7 +73,13 @@
     padding: 2rem;
     box-shadow: 0 0 40px rgba(0,0,0,0.2);
     boder_radius: var(--border-radius);
-    background: #ffffff;
+    background: black;
+
+    padding-left: 5!important;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 1%;
 }
 
 .container,
@@ -141,17 +145,23 @@
 }
 
 .form__button {
-    width: 100%;
-    padding:  1rem 6rem;
+    width: 100;
+    padding:  1rem 7rem;
     font-weight: bold;
     font-size: 1.1rem;
     color: #ffffff;
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: 0;
     outline: none;
     cursor: pointer;
     background: var(--color-primary);
     text-decoration: none;
+
+    padding-left: 5!important;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
 }
 
 .form__button:hover {
