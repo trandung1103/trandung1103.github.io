@@ -7,33 +7,42 @@
     
     
 </head>
-<body text="white">
+<body text="#FFFFFF">
+
     <div class="container">
         <form class="form" id="login">
-            <h1 class="form__title">Sign in</h1>
-            <div class="form__message form__message--error"></div>
-            <div class="form__input-group">
-                <input type="text" class="form__input" autofocus placeholder="Username or email">
-                <div class="form__input-error-message"><!--This is an error massage--></div>
-            </div>
-            <div class="form__input-group">
-                <input type="password" class="form__input" autofocus placeholder="Password">
-                <div class="form__input-error-message"></div>
-            </div>
+              <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                <h1 class="form__title">Đăng nhập</h1>
+                <div [ngClass]="{ 'has-error' : f.submitted && !username.valid }">
+                  <input type="text" class="form__input" name="username" [(ngModel)]="model.username" #username="ngModel" required autofocus placeholder="Username or email" />
+                </div>
+                <br>
+                <div [ngClass]="{ 'has-error' : f.submitted && !password.valid }">
+                  <input type="password" class="form__input" name="password" [(ngModel)]="model.password" #password="ngModel" required autofocus placeholder="Password" />
+                </div>
+                <br>
+                <div>
+                    <p class="form__text">
+                        <a  class="form__button" href="index.html" type="submit">&ensp;<b>Sign in</b></a>
+                    </p>
+ 
+                  <p class="form__text">
+                    <a class="form__link" href="#">Forgot password?</a>
+                  </p>
+                  <p class="form__text">
+                    <a class="form__link" href="regist.html" id="linkCreateAccount">Don't have an account? Create account. </a>
+                    </p>
 
-            <!-- <button class="form__button" type="submit">--><a href="index.html" class="form__button" type="submit">Sign in<!--</button>--></a>
-            <p class="form__text">
-                <a href="#" class="form__link">Forgot your password?</a>
-            </p>
-            <p class="form__text">
-                <a class="form__link" href="regist.html" id="linkCreateAccount">Don't have an account? Create account </a>
-            </p>
+                </div>
+                  <br/> 
+              </form>
+          </div>
         </form>
     </div>
-    <script src="./main.js"></script>
 </body>
-<style>
-body {
+
+  <style>
+  body {
     --color-primary: #009579;
     --color-primary-dark: #026654;
     --color-secondary: #252c6a;
@@ -47,25 +56,26 @@ body {
     align-items:center;
     justify-content: center;
     font-size: 18px;
-    background: url(./6b1.jpg);
+    /* background: url(./images/6b1.jpg); */
+    background-color: rgb(78, 3, 85);
     background-size:cover;
 
-}
+}    
 
 .container {
     with: 400px;
     max-width: 400px;
     margin: 1rem;
-    padding: 2rem;
+    padding: 4rem 3rem;
     box-shadow: 0 0 40px rgba(0,0,0,0.2);
     boder_radius: var(--border-radius);
-    background: black;
-
+    background: rgb(26, 1, 37);
+    font-color:white;
     padding-left: 5!important;
     border-radius: 20px;
     display: flex;
     align-items: center;
-    margin-left: 1%;
+    margin-left: 5%;
 }
 
 .container,
@@ -105,13 +115,14 @@ body {
 }
 
 .form__input-group {
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 .form__input {
     display: block;
-    width: 100%;
+    width: 350px;
     padding: 0.75rem;
+    margin-left: 0.75rem;
     box-sizing: border-box;
     border-radius: var(--border-radius);
     border: 1px solid #dddddd;
@@ -132,9 +143,9 @@ body {
 
 .form__button {
     width: 100;
-    padding:  1rem 7rem;
+    padding:  1.1rem 8rem;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 5rem;
     color: #ffffff;
     border: none;
     border-radius: 0;
@@ -142,12 +153,13 @@ body {
     cursor: pointer;
     background: var(--color-primary);
     text-decoration: none;
-
+    text-align: center;
     padding-left: 5!important;
     border-radius: 20px;
     display: flex;
     align-items: center;
-    margin-left: 0;
+    margin-left: 1rem;
+    margin: center;
 }
 
 .form__button:hover {
@@ -163,12 +175,13 @@ body {
 }
 
 .form__link {
-    color: var(--color-secondary);
+    color: #8f07e9;
     text-decoration: none;
     cursor: pointer;
+    margin-left: 0rem;
 }
 
 .form__link:hover {
     text-decoration: underline;
 }
-</style>
+  </style>
